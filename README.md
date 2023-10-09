@@ -8,13 +8,11 @@ Este proyecto está basado en Laravel 10 por lo que la versión de PHP que utili
 
 
 
-- Laravel UI 4: Es un paquete oficial desarrollado por Laravel y permite crear un sistema de autentificación basado en bootstrap.
-- Laraveles Spanish: Paquete que permite traducir al idioma español los mensajes que muestra por defecto Laravel.
-- Realrashid Sweetalert: paquete que proporciona una manera fácil de mostrar mensajes de alerta utulizando la biblioteca de sweetalert2. 
-- Spatie Laravel Permission: paquete que permite asociar usuarios a roles con permisos y administrarlos con una base de datos.  
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **Laravel UI 4**: Es un paquete oficial desarrollado por Laravel y permite crear un sistema de autentificación basado en Bootstrap.
+- **Laraveles Spanish**: Paquete que permite traducir al idioma español los mensajes que muestra por defecto Laravel.
+- **Realrashid Sweetalert**: paquete que proporciona una manera fácil de mostrar mensajes de alerta utulizando la biblioteca de sweetalert2. 
+- **Spatie Laravel Permission**: paquete que permite asociar usuarios a roles con permisos y administrarlos con una base de datos.  
+
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
@@ -22,8 +20,14 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 
 1. Clonación de repositorio
 
-En la carpeta donde se desee instalar este proyecto, abrir un Git Bash y copie el siguiente código:
-`git clone https://github.com/gonzalomadariaga1/proyecto-base.git`
+En la carpeta donde se desee instalar este proyecto, abrir un Git Bash y copie el siguiente comando:
+***`git clone https://github.com/gonzalomadariaga1/proyecto-base.git`***
+
+2. Instalación de paquetes 
+
+Luego de clonar el repositorio, es necesario instalar los paquetes. Para ello, en una Git bash y dentro de la carpeta del proyecto, ingrese el siguiente comando:
+
+***`npm install`***
 
 Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
