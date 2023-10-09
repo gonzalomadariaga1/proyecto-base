@@ -21,52 +21,33 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 1. Clonación de repositorio
 
 En la carpeta donde se desee instalar este proyecto, abrir un Git Bash y copie el siguiente comando:
-***`git clone https://github.com/gonzalomadariaga1/proyecto-base.git`***
+
+`git clone https://github.com/gonzalomadariaga1/proyecto-base.git`
 
 2. Instalación de paquetes 
 
 Luego de clonar el repositorio, es necesario instalar los paquetes. Para ello, en una Git bash y dentro de la carpeta del proyecto, ingrese el siguiente comando:
 
-***`npm install`***
+`npm install`
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+3. Iniciación del proyecto en modo desarrollo
+Tras la instalación de los paquetes, es necesario iniciar el proyecto en modo desarrollo. Ingrese el siguiente comando en una ventana de Git bash: 
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+`npm run dev`
 
-## Laravel Sponsors
+4. Creación, configuración y migración de base de datos
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Cree una base de datos localmente, luego configure el archivo .env del proyecto e ingrese el nombre de la base de datos junto con el usuario y contraseña si es necesario. Tras esto, ingrese el siguiente comando:
 
-### Premium Partners
+`php artisan migrate`
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+Este comando, creara las tablas necesarias para el correcto funcionamiento del proyecto base, entre las cuales destacan: 
 
-## Contributing
+- Tabla para Usuarios
+- Tabla de permisos
+- Tabla de roles 
+- Tabla de asociación de roles y usuarios
+- Tabla de asociación de permisos y usuarios
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
