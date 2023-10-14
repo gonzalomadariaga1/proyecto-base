@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
 use App\Models\User;
-use Illuminate\Foundation\Auth\RegistersUsers;
+use Spatie\Permission\Models\Role;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use App\Providers\RouteServiceProvider;
+use Spatie\Permission\Models\Permission;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
 {
@@ -54,6 +56,7 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
+       
     }
 
     /**
@@ -64,10 +67,75 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+        $userCount = User::count();
+
+        if ($userCount == 0 ) {
+            # code...
+            $user = User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+            ]);
+
+            $role = Role::create([
+                'name' => 'Superadmin',
+                'description' => 'Control total del sistema',
+                'guard_name' => 'web',
+            ]);
+
+            $user->assignRole($role);
+
+            $permiso1 = Permission::create([
+                'name' => 'admin-user-create',
+                'group_name' => 'Usuarios',
+                'description' => 'Creación de usuarios'
+            ]);
+            $permiso2 = Permission::create([
+                'name' => 'admin-user-show',
+                'group_name' => 'Usuarios',
+                'description' => 'Listado y detalle de usuarios'
+            ]);
+            $permiso3 = Permission::create([
+                'name' => 'admin-user-edit',
+                'group_name' => 'Usuarios',
+                'description' => 'Edición de usuarios'
+            ]);
+            $permiso4 = Permission::create([
+                'name' => 'admin-role-create',
+                'group_name' => 'Roles',
+                'description' => 'Creación de roles'
+            ]);
+            $permiso5 = Permission::create([
+                'name' => 'admin-role-show',
+                'group_name' => 'Roles',
+                'description' => 'Listado y detalle de roles'
+            ]);
+            $permiso6 = Permission::create([
+                'name' => 'admin-role-edit',
+                'group_name' => 'Roles',
+                'description' => 'Edición de rol'
+            ]);
+            $permiso7 = Permission::create([
+                'name' => 'admin-role-delete',
+                'group_name' => 'Roles',
+                'description' => 'Eliminación de roles'
+            ]);
+
+            $role->givePermissionTo([$permiso1,$permiso2,$permiso3,$permiso4,$permiso5,$permiso6,$permiso7]);
+
+            return $user;
+        } else {
+            # code...
+            return User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+            ]);
+        }
+        
+        
+        
+
+        
     }
 }
