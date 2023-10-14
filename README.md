@@ -30,26 +30,27 @@ Luego de clonar el repositorio, es necesario instalar los paquetes. Para ello, e
 
 `npm install`
 
-
-3. Iniciación del proyecto en modo desarrollo
-
-Tras la instalación de los paquetes, es necesario iniciar el proyecto en modo desarrollo. Ingrese el siguiente comando en la misma ventana de Git bash: 
-
-`npm run dev`
-
-4. Iniciar el gestor de dependencias para PHP
+3. Iniciar el gestor de dependencias para PHP
 
 Tras la instalación de los paquetes, es necesario descargar e instalar las librerias y paquetes de este proyecto vía composer. Ingrese el siguiente comando en la misma ventana de Git bash: 
 
 `composer install`
 
-5. Crear archivo .env y generar key
+4. Crear archivo .env y generar key
 
 Ingrese los siguientes comandos para generar un archivo .env y luego, genere una key: 
 
 `cp .env.example .env`
 
 `php artisan key:generate`
+
+
+5. Iniciación del proyecto en modo desarrollo
+
+Tras la instalación de los paquetes, es necesario iniciar el proyecto en modo desarrollo. Ingrese el siguiente comando en la misma ventana de Git bash: 
+
+`npm run dev`
+
 
 6. Creación, configuración y migración de base de datos
 
