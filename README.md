@@ -12,10 +12,10 @@ Este proyecto está basado en Laravel 10 por lo que la versión de PHP que utili
 - **Laraveles Spanish**: Paquete que permite traducir al idioma español los mensajes que muestra por defecto Laravel.
 - **Realrashid Sweetalert**: paquete que proporciona una manera fácil de mostrar mensajes de alerta utilizando la biblioteca de sweetalert2. 
 - **Spatie Laravel Permission**: paquete que permite asociar usuarios a roles con permisos y administrarlos con una base de datos. 
-- **JQuery**: software libre y de código abierto. Cuenta con un diseño que facilita la navegación por un documento y seleccionar elementos DOM proporcionando a los desarrolladores de aplicaciones web complementos que agilizan el desarrollo de proyectos.
-- **DataTables**: es un complemento para jQuery. Es una herramienta altamente flexible, construida sobre los cimientos de la mejora progresiva, que agrega todas estas características avanzadas a cualquier tabla HTML.
+- **JQuery**: software libre y de código abierto. Cuenta con un diseño que facilita la navegación por un documento y seleccionar elementos DOM proporcionando a los desarrolladores de aplicaciones web agilizar el desarrollo de proyectos.
+- **DataTables**: es un complemento basado en jQuery. Es una herramienta altamente flexible, construida sobre los cimientos de la mejora progresiva, que agrega características avanzadas a cualquier tabla HTML.
 - **Bootstrap Icons**: biblioteca de iconos gratuita, de alta calidad y de código abierto con más de 2.000 iconos.
-- **BS Stepper**: es un complemento de JavaScript ligero para Bootstrap que facilita la creación de formularios step-by-step (paso a paso).
+- **BS Stepper**: es un complemento de JavaScript diseñado con Bootstrap que facilita la creación de formularios step-by-step (paso a paso).
 - **Bootstrap Select**: complemento que permite crear dropdowns de selección mucho mas intuitivos.
 
 
