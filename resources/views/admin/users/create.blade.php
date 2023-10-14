@@ -13,6 +13,7 @@
 <div class="row">
     <div class="col-lg-12 col-xs-12 col-sm-12 col-md-12">
         <form class="card" method="POST" action="{{route('admin'.$ruta.'store')}}" enctype="multipart/form-data" class="submit-prevent-form">
+          {{ csrf_field() }}
             @include('components.card.card-header.card-header',[
                                                             'name_singular_m' => $name_singular_m,
                                                             'ruta'=> $ruta,
