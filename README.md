@@ -37,7 +37,21 @@ Tras la instalación de los paquetes, es necesario iniciar el proyecto en modo d
 
 `npm run dev`
 
-4. Creación, configuración y migración de base de datos
+4. Iniciar el gestor de dependencias para PHP
+
+Tras la instalación de los paquetes, es necesario descargar e instalar las librerias y paquetes de este proyecto vía composer. Ingrese el siguiente comando en la misma ventana de Git bash: 
+
+`composer install`
+
+5. Crear archivo .env y generar key
+
+Ingrese los siguientes comandos para generar un archivo .env y luego, genere una key: 
+
+`cp .env.example .env`
+
+`php artisan key:generate`
+
+6. Creación, configuración y migración de base de datos
 
 Cree una base de datos localmente, luego configure el archivo .env del proyecto e ingrese el nombre de la base de datos recién creada junto con el usuario y contraseña si es necesario. Tras esto, ingrese el siguiente comando:
 
@@ -51,7 +65,7 @@ Este comando, creará las tablas necesarias para el correcto funcionamiento del 
 - Tabla de asociación de roles y usuarios
 - Tabla de asociación de permisos y usuarios
 
-5. Registro de usuario
+7. Registro de usuario
 
 Como último paso, diríjase a la página de registro de usuarios y cree uno. Al crearlo, ya se encontrará logueado y podrá acceder al panel de administración tanto de usuarios como de roles.
 

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RolesController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\ReportesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,7 @@ use App\Http\Controllers\UsersController;
 */
 
 Route::get('/', [HomeController::class , 'index'])->name('home')->middleware('auth');
-
+Route::get('/home', [HomeController::class , 'index'])->name('home')->middleware('auth');
 Auth::routes();
 
 Route::name('admin.')->group(function(){
@@ -31,6 +32,8 @@ Route::name('admin.')->group(function(){
         Route::resource('users', UsersController::class)->names('users');
 
         Route::resource('roles', RolesController::class)->names('roles');
+
+        Route::resource('reportes', ReportesController::class)->names('reportes');
 
 
     });
