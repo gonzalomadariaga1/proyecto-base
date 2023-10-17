@@ -58,97 +58,21 @@
                     </a>
                 </h1>
                 <div class="navbar-nav flex-row order-md-last">
-                  @auth
-                    <div class="nav-item d-none d-md-flex me-3">
-                      <div class="btn-list">
-                        <div class="btn-group" role="group">
-                          <input type="radio" class="btn-check" name="btn-radio-dropdown" id="btn-radio-dropdown-dropdown" autocomplete="off">
-                          <label for="btn-radio-dropdown-dropdown" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Accesos directos
-                          </label>
-                          <div class="dropdown-menu" >
-                            @can('admin-user-show')
-                              <a class="dropdown-item" href="{{route('admin.users.create')}}" >
-                                Crear usuario
-                              </a>
-                            @endcan
-        
-                            @can('admin-role-show')
-                              <a class="dropdown-item" href="{{route('admin.roles.create')}}" >
-                                Crear rol
-                              </a>
-                            @endcan
-        
-        
-                            <a class="dropdown-item" href="#"  data-bs-toggle="modal" data-bs-target="#modal-report"> Reportar error </a>
-                            
-                            
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  @endauth
+                  {{-- Inicio Accesos Directos --}}
+                    @include('layouts.components.accesos_directos')
+                  {{-- Fin Accesos Directos --}}
+
+                  {{-- Inicio Modo Oscuro/Claro --}}
+                    @include('layouts.components.claro_oscuro')
+                  {{-- Fin Modo Oscuro/Claro --}}
                   
+                  {{-- Inicio Notificaciones --}}
+                    @include('layouts.components.notificaciones')
+                  {{-- Fin Notificaciones --}}
 
-                  <div class="d-none d-md-flex me-2">
-                    <a href="?theme=dark" class="nav-link px-0 hide-theme-dark" title="Habilitar modo oscuro" data-bs-toggle="tooltip" data-bs-placement="bottom">
-                      <!-- Download SVG icon from http://tabler-icons.io/i/moon -->
-                      <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></svg>
-                    </a>
-                    <a href="?theme=light" class="nav-link px-0 hide-theme-light" title="Habilitar modo claro" data-bs-toggle="tooltip" data-bs-placement="bottom">
-                      <!-- Download SVG icon from http://tabler-icons.io/i/sun -->
-                      <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" /></svg>
-                    </a>
-                  </div>
-
-                  <div class="nav-item dropdown">
-                    @guest
-                        <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
-                            <span class="avatar avatar-sm" style="background-image: url('{{asset('static/avatars/000m2.png')}}"></span>
-                            <div class="d-none d-xl-block ps-2">
-                            <div>{{ __('Login') }} / {{ __('Register') }}</div>
-                            </div>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                            @if (Route::has('login'))
-                                <a href="{{ route('login') }}" class="dropdown-item">{{ __('Login') }}</a>
-                            @endif
-                            @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="dropdown-item">{{ __('Register') }}</a>
-                            @endif
-                        </div>
-                    @else
-                        <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
-                            <span class="avatar avatar-sm" style="background-image: url('{{asset('static/avatars/000m2.png')}}"></span>
-                            <div class="d-none d-xl-block ps-2">
-                                    <div>{{Auth::user()->name}}</div>
-                                    <div class="mt-1 small text-muted">
-                                        @if ( Auth::user()->getRoleNames()->isEmpty()  )
-                                        Sin rol
-                    
-                                        @else
-                                        @foreach (Auth::user()->getRoleNames() as $rol )
-                                            {{ $rol}} 
-                                        @endforeach
-                                        @endif
-                                    </div>
-                            </div>
-                        </a>
-                    
-                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
-                        </div>
-                    @endguest    
-
-                  </div>
+                  {{-- Inicio Acceder/Registro --}}
+                    @include('layouts.components.acceder_registro')
+                  {{-- Fin Acceder/Registro --}}
                 </div>
               </div>
             </header>
@@ -166,64 +90,8 @@
               @include('layouts.footer')
 
             </div>
-            <form method="POST" action="/reportes" enctype="multipart/form-data" class="submit-prevent-form">
-              {{ csrf_field() }}
-              <div class="modal modal-blur fade" id="modal-report" tabindex="-1" role="dialog" aria-hidden="true">
-                <div class="modal-dialog modal-lg" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title">Reportar error del sitio</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <div class="mb-3">
-                        <label class="form-label">Nombre</label>
-                        <input type="text" class="form-control" name="nombre" placeholder="Tu nombre">
-                      </div>
-                      <div class="mb-3">
-                        <label class="form-label">Email</label>
-                        <input type="email" class="form-control" name="email" placeholder="Tu email">
-                      </div>
-                      <div class="row">
-                        <div class="col-lg-8">
-                          <div class="mb-3">
-                            <label class="form-label">URL del error</label>
-                            <input type="text" class="form-control" name="url" placeholder="http//dominio.com/ventas/..." autocomplete="off">
-                            <small>Copie la URL donde detectó el error.</small>
-                          </div>
-                        </div>
-                        <div class="col-lg-4">
-                          <div class="mb-3">
-                            <label class="form-label">Dispositivo</label>
-                            <select name="dispositivo" class="selectpicker" title="Seleccione dispositivo...">
-                              <option value="computador" >Computador</option>
-                              <option value="celular">Celular</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-lg-12">
-                          <div>
-                            <label class="form-label">Descripción del error</label>
-                            <textarea name="descripcion" class="form-control" rows="3" placeholder="Describa como ocurrió el error, cuales fueron los pasos que siguió para que se presentara el error..."></textarea>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="modal-footer">
-                      <a href="#" class="btn btn-link link-secondary" data-bs-dismiss="modal">
-                        Cancelar
-                      </a>
-                      {{-- <a href="#" type="submit" class="btn btn-primary ms-auto" data-bs-dismiss="modal">
-                        Enviar reporte
-                      </a> --}}
-                      <input class="btn btn-primary submit-prevent-button" type="submit" value="Enviar reporte">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </form>
+            @include('layouts.components.modals.reportes')
+            @include('layouts.components.modals.notificaciones')
           </div>
         <!-- Tabler Core -->
         <script src="{{asset('dist/js/tabler.min.js')}}"></script>
@@ -238,7 +106,7 @@
         {{-- Bs Stepper --}}
         <script src="	https://cdn.jsdelivr.net/npm/bs-stepper/dist/js/bs-stepper.min.js"></script>
 
-    
+        @include('layouts.script_notificaciones')
         @include('sweetalert::alert')
         @yield('code_js')
     </body>

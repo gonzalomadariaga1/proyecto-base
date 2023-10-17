@@ -35,7 +35,7 @@ Route::name('admin.')->group(function(){
 
         Route::resource('reportes', ReportesController::class)->names('reportes');
 
-
+        Route::get('/notificaciones/{proyectos_notificaciones_id}/marcar_leida', [HomeController::class , 'marcar_leida']); 
     });
 });
 
