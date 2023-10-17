@@ -84,6 +84,15 @@
 
         </div>
 
+        <div class="card-footer align-items-center">
+          <div class="d-flex justify-content-between">
+            <div class="text-start">
+              <a href="{{ url()->previous() }}" class="btn btn-secondary"><i class="bi bi-arrow-left me-1"></i>Volver</a>
+            </div>
+
+          </div>
+        </div>
+
         
       </div>
         
