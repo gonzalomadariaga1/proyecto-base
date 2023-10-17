@@ -71,6 +71,10 @@ Este comando, creará las tablas necesarias para el correcto funcionamiento del 
 
 7. Registro de usuario
 
-Como último paso, diríjase a la página de registro de usuarios y registre el primer usuario del sistema. Al crearlo, el sistema le asignará automáticamente el rol de Superadmin al primer usuario registrado. El rol de Superadmin tiene asignados todos los permisos necesarios para controlar completamente el sistema. Una vez completado el registro, ya se encontrará logueado y podrá acceder al panel de administración tanto de usuarios como de roles.
+Diríjase a la página de registro de usuarios y registre el primer usuario del sistema. Al crearlo, el sistema le asignará automáticamente el rol de Superadmin al primer usuario registrado. El rol de Superadmin tiene asignados todos los permisos necesarios para controlar completamente el sistema. Una vez completado el registro, ya se encontrará logueado y podrá acceder al panel de administración tanto de usuarios como de roles.
 
+8. Inicie con php artisan serve
 
+Como último paso, inicie el servidor con el siguiente comando con una nueva git bash:
+
+`php artisan serve`
