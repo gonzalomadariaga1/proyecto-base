@@ -10,7 +10,7 @@ trait ConsumeApiNotificaciones{
 
         $client = new Client();
         $key = config('services.api_notificaciones.key');
-        $baseUri = 'https://notificaciones.pspsiche.com/api/notificaciones/';
+        $baseUri = 'https://notificaciones.madro.cl/api/notificaciones/';
 
         $headers = [
             'Accept'        => 'application/json', 
