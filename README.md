@@ -33,29 +33,32 @@ Luego de clonar el repositorio, es necesario instalar los paquetes. Para ello, e
 
 `npm install`
 
-3. Iniciar el gestor de dependencias para PHP
+3. Crear archivo .env y generar key
+
+Ingrese el siguiente comando para generar un archivo .env: 
+
+`cp .env.example .env`
+
+4. Ingresar claves en archivo .env
+
+En el archivo .env ingresar las claves (Api key, id de proyectos) para el módulo de notificaciones. Tras ingresar las claves, genere una key:
+
+`php artisan key:generate`
+
+5. Iniciar el gestor de dependencias para PHP
 
 Tras la instalación de los paquetes, es necesario descargar e instalar las librerias y paquetes de este proyecto vía composer. Ingrese el siguiente comando en la misma ventana de Git bash: 
 
 `composer install`
 
-4. Crear archivo .env y generar key
-
-Ingrese los siguientes comandos para generar un archivo .env y luego, genere una key: 
-
-`cp .env.example .env`
-
-`php artisan key:generate`
-
-
-5. Iniciación del proyecto en modo desarrollo
+6. Iniciación del proyecto en modo desarrollo
 
 Tras la instalación de los paquetes, es necesario iniciar el proyecto en modo desarrollo. Ingrese el siguiente comando en la misma ventana de Git bash: 
 
 `npm run dev`
 
 
-6. Creación, configuración y migración de base de datos
+7. Creación, configuración y migración de base de datos
 
 Cree una base de datos localmente, luego configure el archivo .env del proyecto e ingrese el nombre de la base de datos recién creada junto con el usuario y contraseña si es necesario. Tras esto, ingrese el siguiente comando:
 
@@ -69,11 +72,11 @@ Este comando, creará las tablas necesarias para el correcto funcionamiento del 
 - Tabla de asociación de roles y usuarios
 - Tabla de asociación de permisos y usuarios
 
-7. Registro de usuario
+8. Registro de usuario
 
 Diríjase a la página de registro de usuarios y registre el primer usuario del sistema. Al crearlo, el sistema le asignará automáticamente el rol de Superadmin al primer usuario registrado. El rol de Superadmin tiene asignados todos los permisos necesarios para controlar completamente el sistema. Una vez completado el registro, ya se encontrará logueado y podrá acceder al panel de administración tanto de usuarios como de roles.
 
-8. Inicie con php artisan serve
+9. Inicie con php artisan serve
 
 Como último paso, inicie el servidor con el siguiente comando con una nueva git bash:
 
