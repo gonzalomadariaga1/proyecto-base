@@ -39,17 +39,17 @@ Ingrese el siguiente comando para generar un archivo .env:
 
 `cp .env.example .env`
 
-4. Ingresar claves en archivo .env
-
-En el archivo .env ingresar las claves (Api key, id de proyectos) para el módulo de notificaciones. Tras ingresar las claves, genere una key:
-
-`php artisan key:generate`
-
-5. Iniciar el gestor de dependencias para PHP
+4. Iniciar el gestor de dependencias para PHP
 
 Tras la instalación de los paquetes, es necesario descargar e instalar las librerias y paquetes de este proyecto vía composer. Ingrese el siguiente comando en la misma ventana de Git bash: 
 
 `composer install`
+
+5. Ingresar claves en archivo .env
+
+En el archivo .env ingresar las claves (Api key, id de proyectos) para el módulo de notificaciones. Tras ingresar las claves, genere una key:
+
+`php artisan key:generate`
 
 6. Iniciación del proyecto en modo desarrollo
 
