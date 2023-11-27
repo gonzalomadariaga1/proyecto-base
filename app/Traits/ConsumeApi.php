@@ -4,9 +4,9 @@ namespace App\Traits;
 
 use GuzzleHttp\Client;
 
-trait ConsumeApiNotificaciones{
+trait ConsumeApi{
 
-    public function makeRequest($method,$uri){
+    public function makeRequestNotificaciones($method,$uri){
 
         $client = new Client();
         $key = config('services.api_notificaciones.key');

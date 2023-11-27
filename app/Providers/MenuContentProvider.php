@@ -3,11 +3,11 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\Traits\ConsumeApiNotificaciones;
+use App\Traits\ConsumeApi;
 
 class MenuContentProvider extends ServiceProvider
 {
-    use ConsumeApiNotificaciones;
+    use ConsumeApi;
     /**
      * Register services.
      */
@@ -26,7 +26,7 @@ class MenuContentProvider extends ServiceProvider
         //AQUI ID DEL PROYECTO 
         $uri= config('services.api_notificaciones.id');
 
-        $this->notificaciones = $this->makeRequest($method,$uri);
+        $this->notificaciones = $this->makeRequestNotificaciones($method,$uri);
 
         view()->composer('layouts.app', function($view) {
             $view->with(['notificaciones' => $this->notificaciones]);

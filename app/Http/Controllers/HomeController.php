@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Traits\ConsumeApiNotificaciones;
+use App\Traits\ConsumeApi;
 
 class HomeController extends Controller
 {
-    use ConsumeApiNotificaciones;
+    use ConsumeApi;
     /**
      * Create a new controller instance.
      *
@@ -33,7 +33,7 @@ class HomeController extends Controller
         $method = 'PATCH';
         $uri= $proyectos_notificaciones_id . '/leido';
 
-        return $this->makeRequest($method,$uri);
+        return $this->makeRequestNotificaciones($method,$uri);
 
     }
 }
