@@ -55,15 +55,17 @@
                             @endforeach
                           @endif
                         </td>
-                        
                         <td>
                             <a href="{{route('admin'.$ruta.'show',$user)}}" class="btn btn-primary btn-sm mb-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Ver más"><i class="bi bi-eye-fill"></i></a>
                             <a href="{{route('admin'.$ruta.'edit',$user)}}" class="btn btn-primary btn-sm mb-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Editar" ><i class="bi bi-pencil-square"></i></a>
-                            @if ($user->estado == 1)
-                              <a href="{{route('admin'.$ruta.'unable_user',$user)}}" class="btn btn-danger btn-sm mb-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Deshabilitar" ><i class="bi bi-x-lg"></i></a>
-                            @else
-                              <a href="{{route('admin'.$ruta.'enable_user',$user)}}" class="btn btn-success btn-sm mb-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Habilitar" ><i class="bi bi-check-lg"></i></a>
+                            @if ( !$user->hasRole('Superadmin'))
+                              @if ($user->estado == 1)
+                                <a href="{{route('admin'.$ruta.'unable_user',$user)}}" class="btn btn-danger btn-sm mb-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Deshabilitar" ><i class="bi bi-x-lg"></i></a>
+                                @else
+                                <a href="{{route('admin'.$ruta.'enable_user',$user)}}" class="btn btn-success btn-sm mb-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Habilitar" ><i class="bi bi-check-lg"></i></a>
+                              @endif
                             @endif
+                              
                             
                         </td>
                     </tr>
