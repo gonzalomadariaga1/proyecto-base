@@ -9,7 +9,7 @@ trait ConsumeApi{
     public function makeRequestNotificaciones($method,$uri){
 
         $client = new Client();
-        $key = config('services.api_notificaciones.key');
+        $key = config('services.api_manage.key');
         $baseUri = 'https://notificaciones.madro.cl/api/notificaciones/';
 
         $headers = [

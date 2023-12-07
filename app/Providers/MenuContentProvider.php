@@ -24,7 +24,7 @@ class MenuContentProvider extends ServiceProvider
         //
         $method = 'GET';
         //AQUI ID DEL PROYECTO 
-        $uri= config('services.api_notificaciones.id');
+        $uri= config('services.api_manage.id');
 
         $this->notificaciones = $this->makeRequestNotificaciones($method,$uri);
 

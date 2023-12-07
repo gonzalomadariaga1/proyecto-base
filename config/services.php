@@ -31,9 +31,9 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
-    'api_notificaciones' => [
-        'key' => env('API_NOTIFICACIONES_KEY'),
-        'id' => env('API_NOTIFICACIONES_ID_PROYECTO'),
+    'api_manage' => [
+        'key' => env('API_MANAGE_KEY'),
+        'id' => env('API_MANAGE_ID_PROYECTO'),
     ]
 
 ];

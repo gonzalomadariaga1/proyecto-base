@@ -10,7 +10,7 @@
     <div class="card-body">
         <div class="row row-cards">
 
-            @can('admin-user-show')
+            @can('admin-user-create')
                 <div class="col-sm-6 col-lg-3">
                     <div class="card card-sm">
                     <div class="card-body">
@@ -36,7 +36,7 @@
                     </div>
                 </div>
             @endcan
-            @can('admin-role-show')
+            @can('admin-role-create')
                 <div class="col-sm-6 col-lg-3">
                 <div class="card card-sm">
                     <div class="card-body">

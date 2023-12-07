@@ -7,13 +7,13 @@
             Accesos directos
             </label>
             <div class="dropdown-menu" >
-            @can('admin-user-show')
+            @can('admin-user-create')
                 <a class="dropdown-item" href="{{route('admin.users.create')}}" >
                 Crear usuario
                 </a>
             @endcan
 
-            @can('admin-role-show')
+            @can('admin-role-create')
                 <a class="dropdown-item" href="{{route('admin.roles.create')}}" >
                 Crear rol
                 </a>
