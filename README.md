@@ -25,7 +25,9 @@ Este proyecto está basado en Laravel 10 por lo que la versión de PHP que utili
 
 En la carpeta donde se desee instalar este proyecto, abrir un Git Bash (o terminal de comandos) y copie el siguiente comando:
 
-`git clone https://github.com/gonzalomadariaga1/proyecto-base.git`
+```bash
+git clone https://github.com/gonzalomadariaga1/proyecto-base.git
+```
 
 2. Instalación de paquetes 
 
